@@ -1,0 +1,5 @@
+#!/bin/bash
+if ! echo "$1 $2" | sha256sum -c -; then
+    echo "Checksum failed">&2
+    exit 1
+fi
