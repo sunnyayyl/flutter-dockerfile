@@ -21,6 +21,7 @@ RUN yes | sdkmanager "platforms;android-34" "build-tools;35.0.0-rc4" "cmdline-to
 
 RUN git clone https://github.com/flutter/flutter.git flutter --depth 1 -b stable
 RUN flutter config --no-cli-animations
+RUN flutter precache
 RUN flutter doctor
 RUN yes | flutter doctor --android-licenses
 
