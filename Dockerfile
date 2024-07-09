@@ -17,7 +17,7 @@ RUN mkdir ${ANDROID_HOME}/cmdline-tools
 RUN unzip commandlinetools-linux.zip -d /
 RUN rm /commandlinetools-linux.zip
 RUN mv /cmdline-tools ${ANDROID_HOME}/cmdline-tools/latest
-RUN yes | sdkmanager "platforms;android-34"
+RUN yes | sdkmanager "platforms;android-34" "build-tools;35.0.0-rc4" "cmdline-tools;latest" "platform-tools" "emulator"
 
 RUN git clone https://github.com/flutter/flutter.git flutter --depth 1 -b stable
 RUN flutter config --no-cli-animations
